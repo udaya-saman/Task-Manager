@@ -1,0 +1,18 @@
+Here's how to run the application:
+
+   1. Prerequisites:
+       * Make sure you have Node.js installed.
+       * Make sure you have MongoDB installed and running.
+
+   2. Start the Backend Server:
+       * Open a terminal in the project directory (F:\Uni Projects\SMALL\01 Simple Task Manager).
+       * I will run the command: node server.js
+       * The server will start on http://localhost:3000.
+
+   3. Serve the Frontend:
+       * Open a new terminal in the same project directory.
+       * I will run the command: npx serve public
+       * This will serve the index.html file. Note the URL it provides (it's often http://localhost:5000 or similar).
+
+   4. Access the Application:
+       * Open your web browser and go to the URL from the npx serve command.
