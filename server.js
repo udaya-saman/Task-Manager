@@ -94,6 +94,20 @@ app.post('/api/auth/login', async (req, res) => {
     }
 });
 
+// Verify token and get user data
+app.get('/api/auth/me', auth, async (req, res) => {
+    try {
+        // The 'auth' middleware has already verified the token and attached the user's ID.
+        const user = await User.findById(req.user.userId).select('-password');
+        if (!user) {
+            return res.status(404).send({ error: 'User not found.' });
+        }
+        res.send(user);
+    } catch (error) {
+        res.status(500).send({ error: 'Server error.' });
+    }
+});
+
 // Get all tasks for a user
 app.get('/api/tasks', auth, async (req, res) => {
     try {
