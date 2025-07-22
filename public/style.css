@@ -3,5 +3,21 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc; /* slate-50 */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.auth-container {
+    background-color: #f8fafc; /* slate-50 */
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(253, 100%, 95%, 1) 0px, transparent 50%),
+        radial-gradient(at 98% 1%, hsla(337, 100%, 93%, 1) 0px, transparent 50%);
+    transition: background-color 0.3s ease;
+}
+
+.dark .auth-container {
+    background-color: #0f172a; /* slate-900 */
+     background-image: 
+        radial-gradient(at 0% 0%, hsla(253, 100%, 15%, 0.4) 0px, transparent 50%),
+        radial-gradient(at 98% 1%, hsla(337, 100%, 13%, 0.4) 0px, transparent 50%);
+}
+

@@ -1,18 +1,25 @@
-# Simple Task Manager
+# Task Manager
 
-A full-stack web application for managing daily tasks, built with Node.js, Express, React, and MongoDB. This project features a clean, modern user interface and provides core functionalities like user authentication and complete task management (create, read, update, delete).
+A modern, full-stack web application for managing daily tasks, built with Node.js, Express, and React. This project features a clean, responsive interface with light and dark themes, robust task management, and insightful statistics.
 
 ## Features
 
 *   **User Authentication:** Secure user signup and login functionality using JSON Web Tokens (JWT).
 *   **Task Management:**
-    *   Create new tasks with a title and category.
-    *   View all tasks in an organized list.
+    *   Create, read, update, and delete tasks.
     *   Mark tasks as completed or incomplete.
-    *   Update existing task details through a modal interface.
-    *   Delete tasks.
-*   **Categorized Overview:** See a summary of your tasks grouped by category, including completion counts.
-*   **Responsive Design:** A clean and modern UI styled with Tailwind CSS that works on various screen sizes.
+    *   Organize tasks with custom categories.
+    *   Sort tasks by creation date or alphabetically.
+    *   Paginated task view to handle a large number of tasks.
+*   **Category Management:**
+    *   Create, rename, and delete task categories.
+*   **User-Friendly Interface:**
+    *   Light and dark themes to suit your preference.
+    *   Fully responsive design for seamless use on desktop and mobile devices.
+    *   Modern, custom confirmation modals for destructive actions.
+    *   Intuitive keyboard controls for improved accessibility.
+*   **Task Statistics:**
+    *   Visualize your productivity with charts showing overall task status, tasks per category, and completion trends over the last 7 days.
 
 ## Tech Stack
 
@@ -35,12 +42,12 @@ To get this project up and running on your local machine, follow these steps.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/udaya-saman/Simple-Task-Manager.git
+    git clone https://github.com/udaya-saman/Task-Manager.git
     ```
 
 2.  **Navigate to the project directory:**
     ```bash
-    cd Simple-Task-Manager
+    cd Task-Manager
     ```
 
 3.  **Install dependencies:**
@@ -66,7 +73,13 @@ The backend server provides the following RESTful API endpoints:
 |--------|----------------------|------------------------------|----------------|
 | `POST` | `/api/auth/signup`   | Register a new user.         | None           |
 | `POST` | `/api/auth/login`    | Log in an existing user.     | None           |
+| `GET`  | `/api/auth/me`       | Get the current user's data. | Required       |
+| `PUT`  | `/api/user/theme`    | Update the user's theme.     | Required       |
 | `GET`  | `/api/tasks`         | Get all tasks for the user.  | Required       |
 | `POST` | `/api/tasks`         | Create a new task.           | Required       |
 | `PUT`  | `/api/tasks/:id`     | Update an existing task.     | Required       |
 | `DELETE`| `/api/tasks/:id`    | Delete a task.               | Required       |
+| `GET`  | `/api/categories`    | Get all categories for the user. | Required   |
+| `POST` | `/api/categories`    | Create a new category.       | Required       |
+| `PUT`  | `/api/categories/:id`| Update an existing category. | Required       |
+| `DELETE`| `/api/categories/:id`| Delete a category.         | Required       |
