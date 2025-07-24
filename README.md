@@ -10,7 +10,7 @@ A modern, full-stack web application for managing daily tasks, built with Node.j
     *   Mark tasks as completed or incomplete.
     *   Organize tasks with custom categories.
     *   Sort tasks by creation date or alphabetically.
-    *   Paginated task view to handle a large number of tasks.
+    *   Paginated task view with "Previous" and "Next" buttons to handle a large number of tasks.
 *   **Category Management:**
     *   Create, rename, and delete task categories.
 *   **User-Friendly Interface:**
@@ -20,14 +20,65 @@ A modern, full-stack web application for managing daily tasks, built with Node.j
     *   Intuitive keyboard controls for improved accessibility.
 *   **Task Statistics:**
     *   Visualize your productivity with charts showing overall task status, tasks per category, and completion trends over the last 7 days.
+*   **Automated Cleanup:**
+    *   A cron job runs daily to delete users who have been inactive for more than 30 days, ensuring a clean and optimized database.
 
 ## Tech Stack
 
-*   **Backend:** Node.js, Express.js
-*   **Frontend:** React (served via CDN), JavaScript (ES6+)
+*   **Backend:** Node.js, Express.js, `node-cron` for scheduling tasks.
+*   **Frontend:** React (served via CDN), JavaScript (ES6+), Babel
 *   **Database:** MongoDB with Mongoose ODM
 *   **Authentication:** JSON Web Tokens (JWT) for securing API endpoints, `bcryptjs` for password hashing.
 *   **Styling:** Tailwind CSS
+
+## Project Structure
+
+The project is organized into a modular structure for better maintainability and scalability.
+
+```
+.
+├── controllers/
+│   ├── authController.js
+│   ├── categoryController.js
+│   ├── taskController.js
+│   └── userController.js
+├── middleware/
+│   ├── auth.js
+│   └── errorMiddleware.js
+├── models/
+│   ├── category.js
+│   ├── task.js
+│   └── user.js
+├── public/
+│   ├── components/
+│   │   ├── About.js
+│   │   ├── App.js
+│   │   ├── CategoryManager.js
+│   │   ├── ConfirmModal.js
+│   │   ├── Login.js
+│   │   ├── Pagination.js
+│   │   ├── Sidebar.js
+│   │   ├── Signup.js
+│   │   ├── Stats.js
+│   │   ├── TaskItem.js
+│   │   ├── TaskManager.js
+│   │   ├── TaskModal.js
+│   │   └── useTheme.js
+│   ├── app.js
+│   ├── favicon.ico
+│   ├── index.html
+│   └── style.css
+├── routes/
+│   ├── auth.js
+│   ├── category.js
+│   ├── task.js
+│   └── user.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+└── server.js
+```
 
 ## Setup and Installation
 

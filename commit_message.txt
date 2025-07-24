@@ -1,0 +1,1 @@
+docs: Update README.md with new features and project details
